@@ -1,4 +1,4 @@
-#N canvas 482 234 675 383 10;
+#N canvas 483 264 675 383 10;
 #X obj 41 23 inlet;
 #X obj 191 257 *~;
 #X obj 164 233 osc~;
@@ -14,7 +14,6 @@
 #X obj 343 211 *~;
 #X obj 342 157 cyclone/Line~;
 #X obj 359 181 osc~ 1500;
-#X obj 342 239 *~ 5;
 #X msg 341 133 0 \, 1 100 0 100 1 100 0 100 1 100 0 100 1 100 0 100
 ;
 #X obj 190 280 *~ 0.2;
@@ -79,9 +78,11 @@
 #X connect 11 0 4 0;
 #X connect 12 0 6 0;
 #X restore 28 271 pd play voice prompts;
+#X obj 341 261 cyclone/tanh~;
+#X obj 342 239 *~ 3;
+#X connect 0 0 16 0;
 #X connect 0 0 17 0;
-#X connect 0 0 18 0;
-#X connect 1 0 15 0;
+#X connect 1 0 14 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 1;
 #X connect 4 0 2 0;
@@ -92,16 +93,17 @@
 #X connect 8 0 4 0;
 #X connect 9 0 7 0;
 #X connect 9 0 8 0;
-#X connect 10 0 13 0;
+#X connect 10 0 19 0;
 #X connect 11 0 10 0;
 #X connect 12 0 10 1;
-#X connect 13 0 16 1;
-#X connect 13 0 16 0;
-#X connect 14 0 11 0;
-#X connect 15 0 16 0;
-#X connect 15 0 16 1;
-#X connect 17 0 6 0;
-#X connect 17 1 9 0;
-#X connect 17 2 14 0;
-#X connect 18 0 16 1;
-#X connect 18 0 16 0;
+#X connect 13 0 11 0;
+#X connect 14 0 15 0;
+#X connect 14 0 15 1;
+#X connect 16 0 6 0;
+#X connect 16 1 9 0;
+#X connect 16 2 13 0;
+#X connect 17 0 15 1;
+#X connect 17 0 15 0;
+#X connect 18 0 15 1;
+#X connect 18 0 15 0;
+#X connect 19 0 18 0;
